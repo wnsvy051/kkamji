@@ -1,0 +1,36 @@
+# ── 강의 녹음·전사본: 저작권·초상권 문제로 절대 커밋하지 않음 ──
+*.mp3
+*.m4a
+*.wav
+*.aac
+*.flac
+*.ogg
+*.opus
+*.mp4
+*.mov
+*.webm
+data/
+transcripts/
+recordings/
+강의전사/
+
+# 테스트용 짧은 음성은 직접 녹음한 것만, 이 폴더에 예외로 허용
+!tests/fixtures/*.wav
+
+# ── Python ──
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+
+# ── macOS ──
+.DS_Store
+
+# ── 개인 설정 ──
+config/local.json
+.env

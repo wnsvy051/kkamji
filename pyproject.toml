@@ -1,0 +1,19 @@
+[project]
+name = "kkamji"
+version = "0.2.2"
+description = "강의 녹음을 요약 없이 원문 그대로 전사하는 로컬 파이프라인 (Apple Silicon + Whisper)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "wnsvy051" }]
+dependencies = [
+    # MLX는 Apple Silicon 맥 전용. 다른 환경(CI 등)에서는 설치를 건너뛰고 테스트만 돌린다.
+    "mlx-whisper>=0.4.3; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
